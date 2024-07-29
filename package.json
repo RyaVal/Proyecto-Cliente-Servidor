@@ -1,5 +1,15 @@
 {
   "dependencies": {
     "express": "^4.19.2"
-  }
+  },
+  "name": "proyecto-cliente-servidor",
+  "version": "1.0.0",
+  "description": "Proyecto Ambiente Web Cliente Servidor - IIC 2024 - JN - Grupo H ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Laurens Calvo, Enrique Rodriguez Amador, Alejandro Rodriguez Chacon, Ryan Isaac Valverde Araya",
+  "license": "ISC"
 }

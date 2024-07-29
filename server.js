@@ -2,12 +2,14 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = 3000;
+const PUBLIC = path.join(__dirname, 'public')
 
 // Servir archivos estáticos (HTML, CSS, imágenes, etc.)
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(PUBLIC));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'main.html'));
+  console.log('Loading main page...');
+  res.sendFile(path.join(PUBLIC, 'main.html'));
 });
 
 app.listen(port, () => {

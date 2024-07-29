@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda de Ropa</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Tienda de Ropa</h1>
+  <header id="header">
+    <h1>LookLab</h1>
     <nav>
       <ul>
         <li><a href="#">Inicio</a></li>
@@ -16,6 +21,8 @@
         <li><a href="#">Mujeres</a></li>
         <li><a href="#">Niños</a></li>
         <li><a href="#">Ofertas</a></li>
+        <!-- Para pode agregar las categorias y productos como usuario administrador -->
+        <li><a href="#">Administrar</a></li>
       </ul>
     </nav>
   </header>
@@ -23,20 +30,64 @@
   <main>
     <section class="categoria">
       <h2>Nueva Colección</h2>
-      <div class="productos">
-        <div class="producto">
-          <img src=".jpg" alt="Producto 1">
-          <h3>Producto 1</h3>
-          <p>25.000 Colones</p>
+      <div class="products">
+        <div class="product">
+          <div class="product-img-container">
+            <img src="https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Producto 1">
+          </div>
+          <h3>Camiseta Negra</h3>
+          <p>₡25.000 Colones</p>
+          <form action="" class="form-cart-button">
+            <button class="add-cart-product-button"><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
+          </form>
         </div>
-        <div class="producto">
-          <img src=".jpg" alt="Producto 2">
-          <h3>Producto 2</h3>
+        <div class="product">
+          <div class="product-img-container">
+            <img src="https://images.pexels.com/photos/3702587/pexels-photo-3702587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Producto 2">
+          </div>
+          <h3>Camiseta Champion</h3>
           <p>$25.00</p>
+          <form action="" class="form-cart-button">
+            <button class="add-cart-product-button"><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
+          </form>
         </div>
-        <!-- Añadir más productos aquí -->
+        <div class="product">
+          <div class="product-img-container">
+            <img src="https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Producto 1">
+          </div>
+          <h3>Camiseta Negra</h3>
+          <p>₡25.000 Colones</p>
+          <form action="" class="form-cart-button">
+            <button class="add-cart-product-button"><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
+          </form>
+        </div>
+        <div class="product">
+          <div class="product-img-container">
+            <img src="https://images.pexels.com/photos/3702587/pexels-photo-3702587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Producto 2">
+          </div>
+          <h3>Camiseta Champion</h3>
+          <p>$25.00</p>
+          <form action="" class="form-cart-button">
+            <button class="add-cart-product-button"><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
+          </form>
+        </div>
+        <div class="product">
+          <div class="product-img-container">
+            <img src="https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Producto 1">
+          </div>
+          <h3>Camiseta Negra</h3>
+          <p>₡25.000 Colones</p>
+          <form action="" class="form-cart-button">
+            <button class="add-cart-product-button"><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
+          </form>
+        </div>
+      <!-- Añadir más productos aquí -->
       </div>
     </section>
+    <!-- Para hacer una imagen fixed -->
+    <!-- <section class="static-img">
+
+    </section> -->
   </main>
   
   <footer>
