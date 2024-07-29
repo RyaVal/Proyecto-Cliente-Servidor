@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0"
   },
   "name": "proyecto-cliente-servidor",
   "version": "1.0.0",
