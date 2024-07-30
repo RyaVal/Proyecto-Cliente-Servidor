@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 productoDiv.className = 'product';
                 productoDiv.innerHTML = `
                     <div class="product-img-container">
-                        <img src="ruta_a_imagen/${producto.ID_Producto}.jpg" alt="${producto.Nombre_Producto}">
+                        <img src="${producto.imagen_url}" alt="${producto.nombre_producto}">
                     </div>
-                    <h3>${producto.Nombre_Producto}</h3>
-                    <p>${producto.Precio}</p>
+                    <h3>${producto.nombre_producto}</h3>
+                    <p>₡${producto.precio.toLocaleString()}</p>
                     <form action="" class="form-cart-button">
                         <button class="add-cart-product-button">
                             <i class="fa-solid fa-cart-plus"></i> Agregar al carrito

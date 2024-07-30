@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/productos', (req, res) => {
-  const query = 'SELECT * FROM Productos';
+  const query = 'SELECT * FROM productos';
   connection.query(query, (error, results) => {
       if (error) {
           console.error('Error al obtener productos:', error.stack);

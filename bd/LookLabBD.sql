@@ -34,6 +34,7 @@ CREATE TABLE looklab.productos (
     precio DECIMAL(10, 2) NOT NULL,
     stock INT NOT NULL,
     id_categoria INT,
+    imagen_url VARCHAR(255), -- Nueva columna para la URL de la imagen
     FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
 );
 
@@ -65,3 +66,45 @@ CREATE TABLE looklab.usuarios (
     id_cliente INT,
     FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
 );
+
+-- Insertar clientes
+INSERT INTO looklab.clientes (nombre, apellido, email, telefono, direccion) VALUES
+('Ana', 'Gómez', 'ana.gomez@example.com', '1234567890', 'Av. Principal 123, Ciudad A'),
+('Luis', 'Martínez', 'luis.martinez@example.com', '0987654321', 'Calle Secundaria 456, Ciudad B'),
+('Carla', 'Pérez', 'carla.perez@example.com', '1122334455', 'Plaza Mayor 789, Ciudad C');
+
+-- Insertar categorías
+INSERT INTO looklab.categorias (nombre_categoria) VALUES
+('Ropa Casual'),
+('Ropa Formal'),
+('Accesorios'),
+('Calzado');
+
+-- Insertar productos
+INSERT INTO looklab.productos (nombre_producto, descripcion, precio, stock, id_categoria, imagen_url) VALUES
+('Camisa Casual', 'Camisa de algodón con diseño moderno.', 18593.80, 100, 1, 'https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
+('Pantalón Formal', 'Pantalón de tela elegante para ocasiones especiales.', 30999.80, 50, 2, 'https://images.pexels.com/photos/5556643/pexels-photo-5556643.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
+('Zapatos de Cuero', 'Zapatos de cuero genuino para uso diario.', 55793.80, 30, 4, 'https://images.pexels.com/photos/1854220/pexels-photo-1854220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
+('Sombrero de Sol', 'Sombrero ligero para protegerse del sol.', 12393.80, 75, 'https://images.pexels.com/photos/13780818/pexels-photo-13780818.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
+('Chaqueta', 'Chaqueta ideal para climas fríos.', 68999.80, 20, 1, 'https://images.pexels.com/photos/1833082/pexels-photo-1833082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+
+
+-- Insertar pedidos
+INSERT INTO looklab.pedidos (fecha_pedido, id_cliente) VALUES
+('2024-07-30 10:00:00', 1),
+('2024-07-30 14:30:00', 2),
+('2024-07-29 09:15:00', 3);
+
+-- Insertar detalles de pedido
+INSERT INTO looklab.detalles_pedido (id_pedido, id_producto, cantidad, precio_unitario) VALUES
+(1, 1, 2, 18593.80),
+(1, 4, 1, 12393.80),
+(2, 2, 1, 30999.80),
+(3, 3, 1, 55793.80);
+
+-- Insertar usuarios
+INSERT INTO looklab.usuarios (username, contrasenia, rol, id_cliente) VALUES
+('admin', 'admin_pass', 'admin', NULL),
+('usuario1', 'user1_pass', 'user', 1),
+('usuario2', 'user2_pass', 'user', 2);
+
