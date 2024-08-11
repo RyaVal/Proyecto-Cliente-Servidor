@@ -180,57 +180,33 @@ body {
     background-position-y: 90%;
     margin-top: 1rem;
   } */
-/* Estilos de los botones de inicio de sesion y carrito */
-.flex-container-login-cart{
-  margin: 0;
-  background-color: #000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+/* Carrito de compras (***PRUEBA***)*/
+
+#cart-container {
+  display: none;
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000;
 }
 
-.login-list-items{
-  display: flex;
-  gap: 15px;
-  list-style: none;
+#cart-container.show {
+  display: block;
 }
 
-.login-link-item{
-  text-decoration: none;
-  color: #fff;
-  transition: .5s;
+.cart-items div {
+  margin-bottom: 10px;
 }
 
-.login-link-item:hover{
-  color: var(--main-color-variant);
-  transition: .5s;
-}
-
-.flex-container-cart{
-  padding-right: 40px;
-  width: 200px;
-}
-
-.form-cart-container{
-  width: 100%;
-  border-radius: 6px;
-}
-
-.btn-cart{
-  width: 100%;
-  padding: 6px;
-  border-radius: 6px;
-  background-color: #000;
-  color: #717548;
-  border: 2px solid var(--main-color-variant);
-  cursor: pointer;
-  transition: .3s;
-}
-
-.btn-cart:hover{
-  color: var(--secondary-color);
-  border: 2px solid var(--secondary-color);
-  transition: .3s;
+#cart-total {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 /* Inicio de estilos de login */

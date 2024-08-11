@@ -193,4 +193,42 @@ document.addEventListener('DOMContentLoaded', () => {
     if (user) {
         updateUIForUser(user);
     }
+
+    /* La parte funcional del carrito de compras (***PRUEBA***)*/
+    document.addEventListener('DOMContentLoaded', () => {
+        const cart = [];
+        const cartTotalElement = document.getElementById('cart-total');
+        const cartItemsContainer = document.querySelector('.cart-items');
+    
+        function updateCart() {
+            let total = 0;
+            cartItemsContainer.innerHTML = '';
+            cart.forEach(item => {
+                total += item.price;
+                const cartItem = document.createElement('div');
+                cartItem.textContent = `${item.name} - ₡${item.price}`;
+                cartItemsContainer.appendChild(cartItem);
+            });
+            cartTotalElement.textContent = `₡${total}`;
+        }
+    
+        document.querySelectorAll('.add-cart-product-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const productElement = e.target.closest('.product');
+                const name = productElement.querySelector('h3').textContent;
+                const priceText = productElement.querySelector('p').textContent;
+                const price = parseInt(priceText.replace(/[^0-9]/g, ''), 10);
+    
+                cart.push({ name, price });
+                updateCart();
+            });
+        });
+    
+        document.getElementById('cart-button').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('cart-container').classList.toggle('show');
+        });
+    });
+    
 });
