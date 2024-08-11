@@ -71,6 +71,10 @@ body {
     text-decoration: none;
     transition: .5s;
   }
+
+  .admin-link{
+    display: none;
+  }
   
   main {
     padding: 2rem;
@@ -219,13 +223,14 @@ body {
   background-color: #000;
   color: #717548;
   border: 2px solid var(--main-color-variant);
-  transition: .5s;
+  cursor: pointer;
+  transition: .3s;
 }
 
 .btn-cart:hover{
   color: var(--secondary-color);
   border: 2px solid var(--secondary-color);
-  transition: .5s;
+  transition: .3s;
 }
 
 /* Inicio de estilos de login */
@@ -238,11 +243,17 @@ body {
   box-shadow: 1px 1px 6px -4px, -1px -1px 6px -4px;
   /* box-shadow: 1px 1px 5px -1px; */
   width: 60%;
-  height: 68vh;
+  height: 80vh;
 }
  
 .flex-form-img{
   display: flex;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flex-form-img.flipped {
+  transform: rotateY(180deg);
 }
 
 .form-container-login{
@@ -251,6 +262,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+  backface-visibility: hidden;
 }
 
 .form-container-login h3{
@@ -259,7 +272,6 @@ body {
 
 .form-login{
   width: 100%;
-  margin: auto;
 }
 
 .login-input{
@@ -282,6 +294,27 @@ body {
   border-bottom: 2px solid var(--secondary-color);
   transition: .4s;
 }
+
+.forgot-password{
+  font-size: 0.7rem;
+  text-align: end;
+
+}
+
+.forgot-password-link{
+  text-decoration: none;
+  color: var(--main-color);
+  transition: .3s;
+}
+
+
+.forgot-password-link:hover{
+  color: var(--secondary-color);  
+  text-decoration: underline;
+  transition: .3s;
+}
+
+
 
 .login-btn{
   margin: 1.5rem 0;
@@ -306,7 +339,7 @@ body {
 }
 
 .figure-login{
-  height: 68vh;
+  height: 80vh;
   width: 100%;
   margin: 0;
 }
@@ -319,4 +352,25 @@ body {
   border-bottom-right-radius: 6px;
 }
 
+#register-form{
+  display: none;
+  transform: rotateY(180deg);
+}
+
+.login-register{
+  display: inline;
+  font-size: 0.8rem;
+}
+
+.login-register-btn{
+  border: none;
+  background-color: transparent;
+  color: var(--main-color);
+  transition: .3s;
+}
+
+.login-register-btn:hover{
+  color: var(--secondary-color);
+  transition: .3s;
+}
 

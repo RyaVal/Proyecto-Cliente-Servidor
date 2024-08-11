@@ -15,8 +15,8 @@
   <header id="header">
     <div class="flex-container-login-cart">
       <ul class="login-list-items">
-        <li class="login-list-item"><a href="login.html" class="login-link-item">Iniciar Sesión</a></li>
-        <li class="login-list-item"><a href="#" class="login-link-item">Registrarse</a></li>
+        <li class="login-list-item"><i class="fa-solid fa-arrow-right-to-bracket"></i> <a href="login.html" class="login-link-item">Iniciar Sesión</a></li>
+        <li class="login-list-item"><i class="fa-solid fa-user-plus"></i> <a href="login.html?register=true" class="login-link-item">Registrarse</a></li>
       </ul>
       <div class="flex-container-cart">
         <form action="" class="form-cart-container">
@@ -27,25 +27,39 @@
     <h1><a href="main.html" class="logo-link">LookLab</a></h1>
     <nav>
       <ul>
-        <li><a href="#">Inicio</a></li>
+        <li><a href="main.html">Inicio</a></li>
         <li><a href="#">Hombres</a></li>
         <li><a href="#">Mujeres</a></li>
         <li><a href="#">Niños</a></li>
         <li><a href="#">Ofertas</a></li>
         <!-- Para pode agregar las categorias y productos como usuario administrador -->
-        <li><a href="#">Administrar</a></li>
+        <li class="admin-link"><a href="#">Administrar</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <div class="login-container">
-        <div class="flex-form-img">
-            <div class="form-container-login">
+        <div class="flex-form-img" id="flexFormImg">
+            <div class="form-container-login" id="login-form">
                 <h3>Inicio de Sesión</h3>
-                <form action="" class="form-login">
-                    <input type="email" class="login-input" name="login-email" placeholder="Ingrese su email" required>
-                    <input type="password" class="login-input" name="login-password" placeholder="Ingrese su contraseña">
-                    <button class="login-btn">Iniciar Sesión</button>
+                <form id="login-form" class="form-login" action="/login" method="POST">
+                    <input type="text" class="login-input" name="login-username" placeholder="Ingrese su nombre de usuario" required>
+                    <input type="password" class="login-input" name="login-password" placeholder="Ingrese su contraseña" required>
+                    <p class="forgot-password"><a href="" class="forgot-password-link">¿Olvidaste tu contraseña?</a></p>
+                    <button type="submit" class="login-btn">Iniciar Sesión</button>
+                    <p class="login-register">¿No tienes una cuenta?</p> <button class="login-register-btn" id="switchFormBtn">Registrarse</button>
+                </form>
+            </div>
+            <div class="form-container-login" id="register-form">
+                <h3>Registro</h3>
+                <form action="/register" method="POST" class="form-register">
+                    <input type="text" class="login-input" name="register-name" placeholder="Ingrese su nombre" required>
+                    <input type="text" class="login-input" name="register-lastname" placeholder="Ingrese su apellido" required>
+                    <input type="email" class="login-input" name="register-email" placeholder="Ingrese su email" required>
+                    <input type="text" class="login-input" name="register-usuario" placeholder="Ingrese un nombre de usuario" required>
+                    <input type="password" class="login-input" name="register-password" placeholder="Ingrese su contraseña" required>
+                    <button type="submit" class="login-btn">Registrarse</button>
+                    <p class="login-register">¿Ya tienes una cuenta? </p><button class="login-register-btn" id="switchFormBtn">Iniciar Sesión</button>
                 </form>
             </div>
             <div class="img-container-login">
