@@ -75,22 +75,34 @@ const showRegister = urlParams.get('register') === 'true';
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
     const registerForm = document.querySelector('.form-register');
-    const adminLink = document.querySelector('nav ul li:last-child a');
+    const adminLink = document.querySelector('.admin-link');
 
     function updateUIForUser(user) {
         const loginItems = document.querySelectorAll('.login-list-item');
+        console.log('User object:', user);
+        console.log('User role:', user ? user.rol : 'No user');
         if (user) {
             loginItems[0].innerHTML = `<i class="fa-solid fa-arrow-right-from-bracket"></i> <a href="#" class="login-link-item">Salir</a>`;
             loginItems[1].innerHTML = `<i class="fa-solid fa-user"></i> <span class="login-link-item"> ${user.nombre} ${user.apellido}</span>`;
             if (user.rol === 'admin') {
-                adminLink.style.display = 'block';
+                console.log('User is admin, showing admin link');
+                if (adminLink) {
+                    adminLink.style.display = 'inline';
+                } else {
+                    console.log('Admin link not found in the DOM');
+                }
             } else {
-                adminLink.style.display = 'none';
+                console.log('User is not admin, hiding admin link');
+                if (adminLink) {
+                    adminLink.style.display = 'none';
+                }
             }
         } else {
             loginItems[0].innerHTML = `<i class="fa-solid fa-arrow-right-to-bracket"></i> <a href="login.html" class="login-link-item">Iniciar Sesión</a>`;
             loginItems[1].innerHTML = `<i class="fa-solid fa-user-plus"></i> <a href="login.html?register=true" class="login-link-item">Registrarse</a>`;
-            adminLink.style.display = 'none';
+            if (adminLink) {
+                adminLink.style.display = 'none';
+            }
         }
     }
 
@@ -124,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response.ok) {
                     const data = await response.json();
                     localStorage.setItem('user', JSON.stringify(data.user));
+                    console.log('Calling updateUIForUser');
                     updateUIForUser(data.user);
                     alert('Inicio de sesión exitoso');
                     window.location.href = 'main.html'; // Redirect to main page
@@ -138,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Keep the existing register form code here
+    
     if (registerForm) {
         registerForm.addEventListener('submit', async (e) => {
             e.preventDefault();
