@@ -108,9 +108,9 @@ INSERT INTO looklab.clientes (nombre, apellido, email, telefono, direccion) VALU
 
 -- Insertar categorías
 INSERT INTO looklab.categorias (nombre_categoria) VALUES
-('Ropa Casual'),
-('Ropa Formal'),
-('Accesorios'),
+('Hombre'),
+('Mujer'),
+('Niños'),
 ('Calzado');
 
 -- Insertar productos

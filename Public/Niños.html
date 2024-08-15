@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script defer src="main.js"></script>
+  <script defer src="/Scripts/main.js"></script>
 </head>
 <body>
   <header id="header">
@@ -28,9 +28,9 @@
     <nav>
       <ul>
         <li><a href="main.html">Inicio</a></li>
-        <li><a href="/Public/Hombres.html">Hombres</a></li>
-        <li><a href="/Public/Mujeres.html">Mujeres</a></li>
-        <li><a href="/Public/Niños.html">Niños</a></li>
+        <li><a href="hombres.html" data-category="1">Hombres</a></li>
+        <li><a href="mujeres.html" data-category="2">Mujeres</a></li>
+        <li><a href="niños.html" data-category="3">Niños</a></li>
         <li><a href="#">Ofertas</a></li>
         <!-- Para pode agregar las categorias y productos como usuario administrador -->
         <li class="admin-link"><a href="#">Administrar</a></li>
@@ -45,8 +45,8 @@
   
   <main>
     <section class="categoria">
-      <h2>Nueva Colección</h2>
-      <div class="products">
+      <h2>Ropa para niños y niñas</h2>
+      <div class="products" id="kids-products">
         <div class="product">
           <div class="product-img-container">
             <img src="https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Producto 1">

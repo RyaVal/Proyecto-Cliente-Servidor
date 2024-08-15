@@ -25,6 +25,145 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error al obtener productos:', error));
 });
 
+// document.addEventListener('DOMContentLoaded', () => {
+//     const categoryLinks = document.querySelectorAll('a[data-category]');
+//     const productosDiv = document.querySelector('.products');
+  
+//     function loadProducts(url) {
+//       fetch(url)
+//         .then(response => response.json())
+//         .then(productos => {
+//           productosDiv.innerHTML = '';
+//           productos.forEach(producto => {
+//             const productoDiv = document.createElement('div');
+//             productoDiv.className = 'product';
+//             productoDiv.innerHTML = `
+//               <div class="product-img-container">
+//                 <img src="${producto.imagen_url}" alt="${producto.nombre_producto}">
+//               </div>
+//               <h3>${producto.nombre_producto}</h3>
+//               <p>₡${producto.precio.toLocaleString()}</p>
+//               <form action="" class="form-cart-button">
+//                 <button class="add-cart-product-button">
+//                   <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+//                 </button>
+//               </form>
+//             `;
+//             productosDiv.appendChild(productoDiv);
+//           });
+//         })
+//         .catch(error => console.error('Error al obtener productos:', error));
+//     }
+  
+//     // Cargar todos los productos al cargar la página principal
+//     if (window.location.pathname.includes('main.html')) {
+//       loadProducts('/productos');
+//     }
+  
+//     categoryLinks.forEach(link => {
+//       link.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         const categoryId = e.target.getAttribute('data-category');
+//         loadProducts(`/productos/categorias/${categoryId}`);
+//       });
+//     });
+//   });
+document.addEventListener('DOMContentLoaded', () => {
+    const productosDiv = document.getElementById('men-products');
+  
+    function loadProducts() {
+      fetch('/productos/categorias/1')
+        .then(response => response.json())
+        .then(productos => {
+          productosDiv.innerHTML = '';
+          productos.forEach(producto => {
+            const productoDiv = document.createElement('div');
+            productoDiv.className = 'product';
+            productoDiv.innerHTML = `
+              <div class="product-img-container">
+                <img src="${producto.imagen_url}" alt="${producto.nombre_producto}">
+              </div>
+              <h3>${producto.nombre_producto}</h3>
+              <p>₡${producto.precio.toLocaleString()}</p>
+              <form action="" class="form-cart-button">
+                <button class="add-cart-product-button">
+                  <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+                </button>
+              </form>
+            `;
+            productosDiv.appendChild(productoDiv);
+          });
+        })
+        .catch(error => console.error('Error al obtener productos:', error));
+    }
+  
+    loadProducts();
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const productosDiv = document.getElementById('women-products');
+  
+    function loadProducts() {
+      fetch('/productos/categorias/2')
+        .then(response => response.json())
+        .then(productos => {
+          productosDiv.innerHTML = '';
+          productos.forEach(producto => {
+            const productoDiv = document.createElement('div');
+            productoDiv.className = 'product';
+            productoDiv.innerHTML = `
+              <div class="product-img-container">
+                <img src="${producto.imagen_url}" alt="${producto.nombre_producto}">
+              </div>
+              <h3>${producto.nombre_producto}</h3>
+              <p>₡${producto.precio.toLocaleString()}</p>
+              <form action="" class="form-cart-button">
+                <button class="add-cart-product-button">
+                  <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+                </button>
+              </form>
+            `;
+            productosDiv.appendChild(productoDiv);
+          });
+        })
+        .catch(error => console.error('Error al obtener productos:', error));
+    }
+  
+    loadProducts();
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const productosDiv = document.getElementById('kids-products');
+  
+    function loadProducts() {
+      fetch('/productos/categorias/3')
+        .then(response => response.json())
+        .then(productos => {
+          productosDiv.innerHTML = '';
+          productos.forEach(producto => {
+            const productoDiv = document.createElement('div');
+            productoDiv.className = 'product';
+            productoDiv.innerHTML = `
+              <div class="product-img-container">
+                <img src="${producto.imagen_url}" alt="${producto.nombre_producto}">
+              </div>
+              <h3>${producto.nombre_producto}</h3>
+              <p>₡${producto.precio.toLocaleString()}</p>
+              <form action="" class="form-cart-button">
+                <button class="add-cart-product-button">
+                  <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+                </button>
+              </form>
+            `;
+            productosDiv.appendChild(productoDiv);
+          });
+        })
+        .catch(error => console.error('Error al obtener productos:', error));
+    }
+  
+    loadProducts();
+  });
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

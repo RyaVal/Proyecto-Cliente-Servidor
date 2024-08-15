@@ -29,6 +29,44 @@ app.get('/productos', (req, res) => {
   });
 });
 
+app.get('/productos', (req, res) => {
+  const query = 'SELECT * FROM productos';
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error('Error al obtener productos:', error.stack);
+      res.status(500).send('Error al obtener productos');
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/productos/categorias/:id', (req, res) => {
+  const categoryId = req.params.id;
+  const query = 'SELECT * FROM productos WHERE id_categoria = ?';
+  connection.query(query, [categoryId], (error, results) => {
+    if (error) {
+      console.error('Error al obtener productos:', error.stack);
+      res.status(500).send('Error al obtener productos');
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/productos/categorias/1', (req, res) => {
+  const query = 'SELECT * FROM productos INNER JOIN categorias ON productos.id_categoria = categorias.id_categoria WHERE categorias.id_categoria = 1';
+  connection.query(query, (error, results) => {
+      if (error) {
+          console.error('Error al obtener productos:', error.stack);
+          res.status(500).send('Error al obtener productos');
+          return;
+      }
+      res.json(results);
+  });
+});
+
+
 app.post('/register', (req, res) => {
   const { name, lastname, email, username, password } = req.body;
 
