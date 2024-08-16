@@ -41,6 +41,19 @@ app.get('/productos', (req, res) => {
   });
 });
 
+app.post('/productos', (req, res) => {
+  const { nombre_producto, descripcion, precio, stock, imagen_url, id_categoria } = req.body;
+  const query = 'INSERT INTO productos (nombre_producto, descripcion, precio, stock, imagen_url, id_categoria) VALUES (?, ?, ?, ?, ?, ?)';
+  connection.query(query, [nombre_producto, descripcion, precio, stock, imagen_url, id_categoria], (error, results) => {
+    if (error) {
+      console.error('Error al insertar producto:', error);
+      res.status(500).json({ error: 'Error al agregar producto' });
+      return;
+    }
+    res.status(201).json({ id: results.insertId, ...req.body });
+  });
+});
+
 app.get('/productos/categorias/:id', (req, res) => {
   const categoryId = req.params.id;
   const query = 'SELECT * FROM productos WHERE id_categoria = ?';
@@ -54,15 +67,42 @@ app.get('/productos/categorias/:id', (req, res) => {
   });
 });
 
-app.get('/productos/categorias/1', (req, res) => {
-  const query = 'SELECT * FROM productos INNER JOIN categorias ON productos.id_categoria = categorias.id_categoria WHERE categorias.id_categoria = 1';
+
+app.get('/categorias', (req, res) => {
+  const query = 'SELECT * FROM categorias';
   connection.query(query, (error, results) => {
-      if (error) {
-          console.error('Error al obtener productos:', error.stack);
-          res.status(500).send('Error al obtener productos');
-          return;
-      }
-      res.json(results);
+    if (error) {
+      console.error('Error al obtener categorías:', error.stack);
+      res.status(500).send('Error al obtener categorías');
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.post('/categorias', (req, res) => {
+  const { nombre_categoria } = req.body;
+  const query = 'INSERT INTO categorias (nombre_categoria) VALUES (?)';
+  connection.query(query, [nombre_categoria], (error, results) => {
+    if (error) {
+      console.error('Error al insertar categoría:', error);
+      res.status(500).json({ error: 'Error al agregar categoría' });
+      return;
+    }
+    res.status(201).json({ id: results.insertId, nombre_categoria });
+  });
+});
+
+
+app.get('/usuarios', (req, res) => {
+  const query = 'SELECT * FROM usuarios';
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error('Error al obtener usuarios:', error.stack);
+      res.status(500).send('Error al obtener usuarios');
+      return;
+    }
+    res.json(results);
   });
 });
 

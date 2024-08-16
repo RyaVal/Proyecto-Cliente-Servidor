@@ -350,3 +350,182 @@ body {
   transition: .3s;
 }
 
+/* Estilos de administrar */
+.btns-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.btn-admin {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn-admin:hover {
+  color: var(--secondary-color);
+  transition: 0.3s;
+}
+
+.btn-admin:active{
+  color: var(--secondary-color);
+}
+
+.content-container {
+  
+  padding-top: 20px;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content input, .modal-content select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  display: block;
+}
+
+.modal-content button {
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal-content button:hover {
+  background-color: var(--main-color-variant);
+}
+
+/* Estilos en administar categorias */
+
+.admin-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.admin-title{
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.btn-add{
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn-add:hover{
+  color: var(--secondary-color);
+  transition: 0.3s;
+}
+
+.category-item{
+  border-radius: 6px;
+  padding: 0.8rem;
+}
+
+.category-item:hover{
+  box-shadow: 1px 1px 6px -4px, -1px -1px 6px -4px;
+}
+
+.category-item h3{
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+.product-items{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.product-item{
+  border-radius: 6px;
+  padding: 0.8rem;
+}
+
+.product-item:hover{
+  box-shadow: 1px 1px 6px -4px, -1px -1px 6px -4px;
+}
+
+.product-item h3{
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+.btn-edit-admin{
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 6px 18px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn-edit-admin:hover{
+  background-color: var(--main-color-variant);
+}
+
+.btn-delete-admin{
+  background-color: #900603;
+  color: #fff;
+  border: none;
+  padding: 6px 18px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn-delete-admin:hover{
+  background-color: #D21404;
+}
+
+
+
+
+
+
